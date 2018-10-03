@@ -1,79 +1,61 @@
 package view;
 
-import java.awt.EventQueue;
-
-import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
-import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class CadastroCliente extends JInternalFrame {
+public class CadastroCliente extends JPanel {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					CadastroCliente frame = new CadastroCliente();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
+	 * Create the panel.
 	 */
 	public CadastroCliente() {
-		setBounds(100, 100, 269, 254);
+		setLayout(null);
 		
 		JPanel panel = new JPanel();
-		getContentPane().add(panel, BorderLayout.CENTER);
+		panel.setBounds(0, 0, 247, 264);
+		add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblCadastroDeCliente = new JLabel("Cadastro de Cliente");
-		lblCadastroDeCliente.setBounds(10, 11, 135, 14);
-		panel.add(lblCadastroDeCliente);
+		JLabel label = new JLabel("Cadastro de Cliente");
+		label.setBounds(10, 11, 135, 14);
+		panel.add(label);
 		
-		JLabel lblNome = new JLabel("Nome:");
-		lblNome.setBounds(10, 36, 46, 14);
-		panel.add(lblNome);
+		JLabel label_1 = new JLabel("Nome:");
+		label_1.setBounds(10, 36, 46, 14);
+		panel.add(label_1);
 		
 		textField = new JTextField();
+		textField.setColumns(10);
 		textField.setBounds(10, 52, 224, 20);
 		panel.add(textField);
-		textField.setColumns(10);
 		
-		JLabel lblCep = new JLabel("CEP:");
-		lblCep.setBounds(10, 83, 46, 14);
-		panel.add(lblCep);
+		JLabel label_2 = new JLabel("CEP:");
+		label_2.setBounds(10, 83, 46, 14);
+		panel.add(label_2);
 		
 		textField_1 = new JTextField();
+		textField_1.setColumns(10);
 		textField_1.setBounds(10, 99, 224, 20);
 		panel.add(textField_1);
-		textField_1.setColumns(10);
 		
-		JLabel lblDataNascimento = new JLabel("Data Nascimento:");
-		lblDataNascimento.setBounds(10, 130, 104, 14);
-		panel.add(lblDataNascimento);
+		JLabel label_3 = new JLabel("Data Nascimento:");
+		label_3.setBounds(10, 130, 104, 14);
+		panel.add(label_3);
 		
 		textField_2 = new JTextField();
+		textField_2.setColumns(10);
 		textField_2.setBounds(10, 144, 224, 20);
 		panel.add(textField_2);
-		textField_2.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Salvar");
-		btnNewButton.setBounds(10, 190, 224, 23);
-		panel.add(btnNewButton);
+		JButton button = new JButton("Salvar");
+		button.setBounds(10, 190, 224, 23);
+		panel.add(button);
 
 	}
 }

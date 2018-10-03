@@ -20,7 +20,6 @@ import javax.swing.border.EmptyBorder;
 public class Principal extends JFrame {
 
 	private JPanel contentPane;
-	private JDesktopPane desktopPane;
 	CadastroCliente cadastrarCliente;
 	TelaSobre s;
 
@@ -64,19 +63,19 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				boolean existe=false;
-				for (Component element : desktopPane.getComponents()) {
-					if(element==cadastrarCliente) 
-					{
-						JOptionPane.showMessageDialog(null, "ERÔÔÔÔ!");
-						existe=true;
-						break;
-					}
-				}
+				//for (Component element : desktopPane.getComponents()) {
+				//	if(element==cadastrarCliente) 
+				//	{
+				//		JOptionPane.showMessageDialog(null, "ERÔÔÔÔ!");
+				//		existe=true;
+				//		break;
+				//	}
+				//}
 				
 				if(!existe) {
-					cadastrarCliente = new CadastroCliente();
-					desktopPane.add(cadastrarCliente);
-					cadastrarCliente.show();
+					contentPane = new CadastroCliente();
+					setContentPane(contentPane);
+					revalidate();
 				}
 			}
 		});
@@ -103,9 +102,9 @@ public class Principal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				//Adiciona a tela de cadastro no painel principal
-				CadastroProduto telaCadastro = new CadastroProduto();
-				desktopPane.add(telaCadastro);
-				telaCadastro.show();
+				//CadastroProduto telaCadastro = new CadastroProduto();
+				//desktopPane.add(telaCadastro);
+				//telaCadastro.show();
 			}
 		});
 		mntmCadastrar.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F5, 0));
@@ -155,10 +154,5 @@ public class Principal extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		desktopPane = new JDesktopPane();
-		desktopPane.setBounds(0, 0, 434, 295);
-		contentPane.add(desktopPane);
-		desktopPane.setLayout(null);
 	}
 }
